@@ -10,11 +10,87 @@ code {
   font-family: Arial, Helvetica, sans-serif,
     monospace;
 }
+.wrapper{
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid rgb(123, 123, 123); */
+}
+form{
+  display: flex;
+
+}
+ul{
+  list-style: none;
+}
+.dropdown{
+display: flex;
+margin-right: 1rem;
+}
+select{
+  padding: 0.2rem .5rem;
+  border:none;
+  height: 40%;
+  border-radius: .6rem;
+  border: #ffffff;
+  position: relative;
+  top: 35%;
+  
+}
+@media screen and (max-width: 800px) {
+  select {
+    position: relative;
+    top: 20%;
+  }
+  .navbar{
+    flex-wrap: wrap;
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+   .dropdown{
+
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+
+   }
+   .datepicker{
+    width: 100%;
+    
+  }
+  .filterbutton{
+    position: relative;
+  }
+  .dropdown{
+
+    }
+}
+
+.filterbutton{
+ margin-left: 1rem;
+ height: 50%;
+ position: relative;
+ top: 27%;
+}
+.datepicker{
+  border:none
+  
+}
+
+.name{
+  font-weight: bold;
+  padding: 2px;
+}
+
+
 
 .navbar {
   display: flex;
   border-bottom: 1px solid rgb(146, 146, 146);
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
 }
 ul{
   display: flex;

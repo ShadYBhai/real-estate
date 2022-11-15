@@ -1,21 +1,51 @@
 .cards{
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  padding: 40px;
-  grid-gap: 40px;
+  padding: 30px;
+  grid-gap: 30px;
 }
 
 .card{
-    background-color: azure;
-    border-radius: 20px;
-    box-shadow:  0 0 30px(rgba(0,0,0,.18)) ;
+    background-color: rgb(246, 246, 246);
+    border-radius: 1rem;
+    box-shadow:  0 0 30px(rgba(0,0,0,.18));
+
 }
 
 .property{
     height: 100%;
     width: 100%;
+    border-radius: 1rem;
 }
 .container{
     position: relative;
-    clip-path: polygon(0 0,100%);
+    clip-path: polygon(0 0,100% 0, 100% 85%,0 100%);
+}
+p,span{
+    margin-left: 1rem;
+}
+
+.name{
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.price{
+    font-size: 1.5rem;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+}
+.address {
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}
+.beds{
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.beds:hover {
+    cursor: pointer;
 }
