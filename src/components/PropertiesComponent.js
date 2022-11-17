@@ -1,9 +1,18 @@
 import React from "react";
 import PropertiesComponentStyles from "../styles/PropertiesComponent.css";
 import { BiBed } from "react-icons/bi";
+import { BsHeart, BsFillHeartFill } from "react-icons/bs";
 import { MdOutlineBathtub } from "react-icons/md";
 
-const PropertiesComponent = ({ properties }) => {
+const PropertiesComponent = ({ properties, setWishlist, wishlist }) => {
+  const handleWishlist = (id) => {
+    if (wishlist.includes(id)) {
+      return setWishlist(wishlist.filter((wish) => {
+        return wish != id;
+      }));
+    }
+    setWishlist([...wishlist, id]);
+  }
   return (
     <div className="cards">
       {properties &&
@@ -20,7 +29,7 @@ const PropertiesComponent = ({ properties }) => {
                 </div>
                 <div>
                   <span className="price">{property.price}</span>
-                  <span>{property.ico}</span>
+                  <span onClick={() => handleWishlist(property.id)}>{wishlist.includes(property.id) ? < BsFillHeartFill /> : < BsHeart />}</span>
                   <p className="name">{property.name}</p>
                   <p className="address">{property.address}</p>
                   <hr />

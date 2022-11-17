@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import PropertiesComponent from "../components/PropertiesComponent";
 import BellaVilla from "../images/bellavilla.jpg";
 import Villa from "../images/b8bd3365.f10.webp";
@@ -17,10 +17,10 @@ import FilterComponent from "../components/FilterComponent";
 const properties = [
   {
     name: "Bella Villa",
+    id: 1,
     address: "2699 Green Valley, Highland Lake, USA",
-    price: "$3300/month",
+    price: "3300",
     img: BellaVilla,
-    ico: <BsHeart />,
     beds: "3 Beds",
     rooms: "5 Bathrooms",
     type: "House",
@@ -28,10 +28,10 @@ const properties = [
   },
   {
     name: "Orchard House",
+    id: 2,
     address: "2699 Green Valley, Highland Lake, USA",
-    price: "$3500/month",
+    price: "3500",
     img: Villa,
-    ico: <BsHeart />,
     beds: "4 Beds ",
     rooms: "3 Bathrooms",
     type: "House",
@@ -39,10 +39,10 @@ const properties = [
   },
   {
     name: "Pacific View",
+    id: 3,
     address: "2699 Green Valley, Highland Lake, Spain",
-    price: "$3000/month",
+    price: "3000",
     img: Pacific,
-    ico: <BsHeart />,
     beds: "3 Beds",
     rooms: "3 Bathrooms",
     type: "Villa",
@@ -50,10 +50,10 @@ const properties = [
   },
   {
     name: "Red Sky Night",
+    id: 4,
     address: "2699 Green Valley, Highland Lake,  Spain",
-    price: "$2000/month",
+    price: "2000",
     img: Redskynight,
-    ico: <BsHeart />,
     beds: "5 Beds",
     rooms: "2 Bathrooms",
     type: "Villa",
@@ -61,10 +61,10 @@ const properties = [
   },
   {
     name: "Udhampur",
+    id: 5,
     address: "2699 Green Valley, Highland Lake, Maldives",
-    price: "$1800/month",
+    price: "1800",
     img: Udhampur,
-    ico: <BsHeart />,
     beds: "6 Beds",
     rooms: "2 Bathrooms",
     type: "Beach House",
@@ -72,10 +72,10 @@ const properties = [
   },
   {
     name: "Night Sky",
+    id: 6,
     address: "2699 Green Valley, Highland Lake, India",
-    price: "$1500/month",
+    price: "1500",
     img: Bahamas,
-    ico: <BsHeart />,
     beds: "6 Beds",
     rooms: "2 Bathrooms",
     type: "Beach House",
@@ -83,10 +83,10 @@ const properties = [
   },
   {
     name: "Manali House",
+    id: 7,
     address: "2699 Green Valley, Highland Lake, India",
-    price: "$500/month",
+    price: "500",
     img: Seven,
-    ico: <BsHeart />,
     beds: "4 Beds",
     rooms: "2 Bathrooms",
     type: "Mountain House",
@@ -94,10 +94,10 @@ const properties = [
   },
   {
     name: "Maldives Home",
+    id: 8,
     address: "2699 Green Valley, Highland Lake, Maldives",
-    price: "$1000/month",
+    price: "1000",
     img: eight,
-    ico: <BsHeart />,
     beds: "6 Beds",
     rooms: "2 Bathrooms",
     type: "Mountain House",
@@ -106,11 +106,22 @@ const properties = [
 ];
 
 const HomeScreen = () => {
+  const [data, setData] = useState(properties);
+  const [wishlist, setWishlist] = useState([]);
   return (
     <div>
       <h1>Search properties to rent</h1>
-      <FilterComponent />
-      <PropertiesComponent properties={properties} />
+      <FilterComponent
+        setData={setData}
+        data={data}
+        properties={properties}
+        wishlist={wishlist}
+      />
+      <PropertiesComponent
+        properties={data}
+        wishlist={wishlist}
+        setWishlist={setWishlist}
+      />
     </div>
   );
 };
