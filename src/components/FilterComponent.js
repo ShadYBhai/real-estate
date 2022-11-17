@@ -57,14 +57,7 @@ const FilterComponent = ({ setData, data, properties, wishlist }) => {
   const filterObj = [
     {
       name: "Location: ",
-      properties: [
-        "Select Location",
-        "India",
-        "Australia",
-        "USA",
-        "Spain",
-        "Maldives",
-      ],
+      properties: ["Select Location", "India", "USA", "Spain", "Maldives"],
       handler: handleLocation,
     },
     {
